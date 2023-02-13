@@ -27,6 +27,7 @@ function SignUp() {
     // const initialData = {...loginData};
     loginData.push(login);
     localStorage.setItem("loginDetails",JSON.stringify(loginData))
+    navigate("/login");
   };
 
   return (
