@@ -1,27 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import Rating from "@material-ui/lab/Rating";
-import { useStateValue } from "../../utils/StateProvider";
+// import { useStateValue } from "../../utils/StateProvider";
+import { useNavigate } from "react-router-dom";
 function Card({ id, image, title, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+  // const [{ basket }, dispatch] = useStateValue();
+  const navigate=useNavigate();
   // console.log("basket >>>>", basket);
-  const addToBasket = (e) => {
-    e.preventDefault();
+  // const addToBasket = (e) => {
+  //   e.preventDefault();
 
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id,
-        title,
-        price,
-        image,
-        rating,
-      },
-    });
-  };
+  //   dispatch({
+  //     type: "ADD_TO_BASKET",
+  //     item: {
+  //       id,
+  //       title,
+  //       price,
+  //       image,
+  //       rating,
+  //     },
+  //   });
+  // };
+  const navigatePage=(id)=>
+  {
+    navigate(`/product/${id}`);
+  }
 
   return (
-    <Container>
+    <Container onClick={()=>navigatePage(id)}>
       <Image>
         <img src={image} alt="" />
       </Image>
@@ -35,7 +41,7 @@ function Card({ id, image, title, price, rating }) {
         />
         <p>₹ {price}</p>
 
-        <button onClick={addToBasket}>Add to Cart</button>
+        <button  >Add to Cart</button>
       </Description>
     </Container>
   );

@@ -14,6 +14,7 @@ function Payment() {
   const confirmPayment = async (e) => {
     e.preventDefault();
     alert("Thanks for shopping!");
+  
     dispatch({
       type: "EMPTY_BASKET",
     });

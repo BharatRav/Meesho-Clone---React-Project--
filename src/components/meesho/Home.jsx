@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <Container>
-      <Navbar />
+      {/*<Navbar/>*/} 
       <NavBar2/>
       <Banner>
         <img src="https://media.fashionnetwork.com/cdn-cgi/image/fit=contain,width=1000,height=1000/m/0b8e/6422/560a/0f5c/680f/917b/371c/9c0e/907a/803e/803e.jpeg" alt="" />

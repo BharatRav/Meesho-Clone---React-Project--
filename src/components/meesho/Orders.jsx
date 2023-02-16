@@ -1,49 +1,47 @@
-import axios from "../../utils/axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
 import { useStateValue } from "../../utils/StateProvider";
+import { getBasketTotal } from "../../utils/reducer";
 
 function Orders() {
-  const [{ user }] = useStateValue();
-  const [orders, setOrders] = useState([]);
-  useEffect(() => {
-    axios
-      .post("/orders/get", { email: user.email })
-      .then((res) => setOrders(res.data));
-  }, []);
+  const [{address,orders }] = useStateValue();
+  // const [orders, setOrders] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .post("/orders/get", { email: user.email })
+  //     .then((res) => setOrders(res.data));
+  // }, []);
   console.log(orders);
 
   return (
     <Container>
-      <Navbar />
       <Main>
         <OrderContainer>
           <h2>Your Orders</h2>
 
-          {orders.map((order) => (
+          
             <OrderDetail>
               <AddressComponent>
                 <h4>Shipping Address</h4>
 
                 <div>
-                  <p>{order.address.fullName}</p>
-                  <p>{order.address.flat}</p>
-                  <p>{order.address.area}</p>
+                  <p>{address.fullName}</p>
+                  <p>{address.flat}</p>
+                  <p>{address.area}</p>
 
                   <p>
-                    {order.address.city} {order.address.state}
+                    {address.city} {address.state}
                   </p>
-                  <p>Phone : {order.address.phone}</p>
+                  <p>Phone : {address.phone}</p>
                 </div>
               </AddressComponent>
               <OrderBasket>
                 <h4>Order</h4>
                 <p>
-                  Subtotal : ₹ <span>{order.price}</span>
+                  Subtotal : ₹ <span>{getBasketTotal(orders)}</span>
                 </p>
 
-                {order.products.map((product) => (
+                {orders.map((product) => (
                   <Product>
                     <Image>
                       <img src={product.image} alt="" />
@@ -57,7 +55,7 @@ function Orders() {
                 ))}
               </OrderBasket>
             </OrderDetail>
-          ))}
+          
         </OrderContainer>
       </Main>
     </Container>

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useStateValue } from "../../utils/StateProvider";
 import basketIcon from "../../images/basket-icon.png";
 import searchIcon from "../../images/searchIcon.png";
+import { red } from "@material-ui/core/colors";
 
 
 function Navbar() {
@@ -45,9 +46,9 @@ function Navbar() {
             <p>Return</p>
             <p>& Orders</p>
           </NavButton>
-          <BasketButton onClick={() => navigate("/checkout")}>
+          <BasketButton onClick={() => navigate("/checkout")} >
             <img src={basketIcon}  alt="cart-logo" />
-            <p>{basket?.length}</p>
+            <p style={{position:"absolute",left:"2px",top:"-3px",background:"red",color:"white",borderRadius:"5px"}} >{basket?.length}</p>
           </BasketButton>
         </RightContainer>
       </Inner>
@@ -190,6 +191,7 @@ const BasketButton = styled.div`
   align-items: center;
   height: 90%;
   cursor: pointer;
+  position:relative;
   
   img {
     width: 30px;
