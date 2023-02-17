@@ -24,7 +24,7 @@ function Home() {
       <NavBar2/>
       <Banner>
         <img src="https://media.fashionnetwork.com/cdn-cgi/image/fit=contain,width=1000,height=1000/m/0b8e/6422/560a/0f5c/680f/917b/371c/9c0e/907a/803e/803e.jpeg" alt="" />
-        <img src="https://media.fashionnetwork.com/cdn-cgi/image/fit=contain,width=1000,height=1000/m/0b8e/6422/560a/0f5c/680f/917b/371c/9c0e/907a/803e/803e.jpeg" alt="" />
+      {/*<img src="https://images.meesho.com/images/marketing/1631722939962.webp" style={{width:"1000",height:"10"}} alt="" />*/}
       </Banner>
 
       <Main>
@@ -87,10 +87,10 @@ const Main = styled.div`
   justify-content: center;
   place-items: center;
   width: 100%;
-  height:100%;
+  height: maxContaint;
   grid-auto-rows: 420px;
-  grid-template-columns: repeat(4, 280px);
-  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+
 
   /* Mobile */
   @media only screen and (max-width: 767px) {

@@ -1,7 +1,6 @@
 import React from "react";
 import { useStateValue } from "../../utils/StateProvider";
 import styled from "styled-components";
-import Navbar from "./Navbar";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../utils/reducer";
 import { useNavigate } from "react-router-dom";
@@ -64,7 +63,7 @@ function Checkout() {
               <Description>
                 <h4>{product.title}</h4>
 
-                <p>₹ {product.price}</p>
+                <p>&#8377; {product.price}</p>
                  <div style={{display:"flex",justifyContent:"flex-start"}}>
                  <div style={{display:"flex",border:"1px solid darkgray",alignItems:"strech",justifyContent:"center",alignContent:"center",gap:"3px"}}>
                  <button onClick={()=>decQuantity(product.id)} style={{width:"30px",background:"darkgray"}}>-</button><span>{product.quantity}</span><button onClick={()=>incQuantity(product.id)} style={{width:"30px"}}>+</button>

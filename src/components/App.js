@@ -13,6 +13,8 @@ import AddProduct from "./meesho/AddProduct";
 import Orders from "./meesho/Orders";
 import Product from "./meesho/Product";
 import Navbar from "./meesho/Navbar";
+import "../styles/App.css"
+import OnlinePayment from "./meesho/OnlinePayment";
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
           <Route path="/addproduct" element={<AddProduct />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/product/:id" element={<Product/>}/>
+          <Route path="/onlinepayment" element={<OnlinePayment/>}/>
         </Routes>
       </Container>
     </Router>

@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { getBasketTotal } from "../../utils/reducer";
 import { useStateValue } from "../../utils/StateProvider";
 
-import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
 function Payment() {
   const [{ address, basket }, dispatch] = useStateValue();
+  const [onlinePay,setOnlinePay] = useState(false);
   const navigate = useNavigate();
 
   const confirmPayment = async (e) => {
@@ -22,13 +22,15 @@ function Payment() {
   };
 
   const [isChecked, setIsChecked] = useState(false);
-  const handleOnChange = () => {
+  const handleOnChange = (e) => {
+    setOnlinePay(!onlinePay);
     setIsChecked(!isChecked);
+    console.log(e.target.name);
   };
 
+  console.log(onlinePay);
   return (
     <Container>
-      <Navbar />
 
       <Main>
         <ReviewContainer>
@@ -57,16 +59,18 @@ function Payment() {
               <label>
                 <input
                   type="checkbox"
+                  name="onlinePayment"
                   value="1"
                   id="Card Payment"
                   checked={isChecked}
                   onChange={handleOnChange}
                 />
-                Card Payment
+                Online Payment
               </label>
               <label>
                 <input
                   type="checkbox"
+                  name ="COD"
                   value="2"
                   checked={!isChecked}
                   onChange={handleOnChange}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useStateValue } from "../../utils/StateProvider";
-import Navbar from "./Navbar";
 function Address() {
   const [{}, dispatch] = useStateValue();
   const [fullName, setFullName] = useState("");
@@ -35,7 +34,6 @@ function Address() {
 
   return (
     <Container>
-      <Navbar />
       <Main>
         <FormContainer>
           <InputContainer>

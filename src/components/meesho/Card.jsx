@@ -39,9 +39,10 @@ function Card({ id, image, title, price, rating }) {
           precision={0.5}
           readOnly
         />
-        <p>₹ {price}</p>
+        <p> &#8377; {price}</p>
+        
 
-        <button  >Add to Cart</button>
+        {/*<button  >Add to Cart</button>*/}
       </Description>
     </Container>
   );

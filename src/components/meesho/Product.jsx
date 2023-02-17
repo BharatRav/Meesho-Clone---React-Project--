@@ -50,7 +50,7 @@ const addToBasket = (e) => {
     </section>
     <section className={styles['right__side']}>
           <h3>{data.title}</h3>
-          <h2>Rs: {data.price}</h2>
+          <h2>&#8377; {data.price}</h2>
           <section className={styles['cat__container']}>
           <span className={styles['cat__span']}>category</span>
           <span className={styles['cat__spandata']}>{data.category}</span>

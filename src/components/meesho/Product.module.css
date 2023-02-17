@@ -1,6 +1,6 @@
 .product__container
 {
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     background-color: aliceblue;
     display: flex;
@@ -12,7 +12,7 @@
 .left__side
 {
     flex: 1;
-    background-color: yellowgreen;
+    background-color: #fff;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -20,7 +20,7 @@
 {
     flex: 1;
 
-    background-color: lightcyan;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -28,9 +28,10 @@
 }
 
 .img{
-    padding-top: 3.1rem;
-    width:60%;
-    height:500px;
+    padding-top: 5.1rem;
+    /* padding-top: 3.1rem; */
+    width:50%;
+    height:450px;
     
 }
 .cat__container
